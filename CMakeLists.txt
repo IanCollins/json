@@ -9,23 +9,29 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_CXX_FLAGS "-Wall -Werror -Wno-sign-compare -Wno-ambiguous-reversed-operator")
 Include(FetchContent)
 
-# We depend on influxdb-cxx, so import it.
+# We depend on masuma-system, so import it.
 #
 FetchContent_Declare(
         masuma-system
-        GIT_REPOSITORY https://github.com/offa/influxdb-cxx
-        GIT_TAG        v0.6.7
+        GIT_REPOSITORY https://github.com/IanCollins/system.git
+        GIT_TAG        v0.3.0
 )
 
 # HTTP only, no async curl.
 set(INFLUXCXX_WITH_BOOST OFF CACHE INTERNAL "No boost")
 
-# We want to statically link influxdb-cxx.
+# We want to statically link masuma-system.
 set(BUILD_SHARED_LIBS OFF)
 
-FetchContent_MakeAvailable(influxdb-cxx)
+FetchContent_MakeAvailable(masuma-system)
 
-include_directories("${CMAKE_INSTALL_PREFIX}/include/masuma")
+add_library(masuma-system::masuma-system INTERFACE IMPORTED)
+
+target_link_libraries(masuma-system::masuma-system INTERFACE InfluxDB)
+
+include_directories(
+        ${masuma-system_SOURCE_DIR}/include
+)
 
 file(GLOB json_sources CONFIGURE_DEPENDS *.cc)
 file(GLOB json_headers CONFIGURE_DEPENDS *.h)

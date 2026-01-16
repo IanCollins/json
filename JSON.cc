@@ -8,7 +8,7 @@
  *
  ******************************************************************************/
 
-#include <utils/String.h>
+#include <system/String.h>
 
 #include "JSON.h"
 #include "ValueProxy.h"

@@ -12,8 +12,8 @@
 #pragma once
 
 #include "JSON.h"
-#include <utils/Agent.h>
-#include <utils/AutoFd.h>
+#include <system/Agent.h>
+#include <system/AutoFd.h>
 
 #include <cstdlib>
 #include <mutex>

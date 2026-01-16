@@ -9,22 +9,9 @@
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-focal" />
+            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-bionic" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-focal" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-illumos" />
-          </excludedPaths>
-        </serverdata>
-      </paths>
-      <paths name="Ubuntu 20.04 (8d791217-e459-4c3c-b70f-ca17b1647a73)">
-        <serverdata>
-          <mappings>
-            <mapping deploy="/tmp/tmp.PPwgoAOFKN" local="$PROJECT_DIR$" />
-          </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-focal" />
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug" />
             <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-release-illumos" />
           </excludedPaths>
         </serverdata>

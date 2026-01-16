@@ -10,9 +10,9 @@
 
 #include "JSONAgent.h"
 
-#include <utils/Log.h>
-#include <utils/AutoStreambuf.h>
-#include <utils/Time.h>
+#include <system/Log.h>
+#include <system/AutoStreambuf.h>
+#include <system/Time.h>
 #include <sstream>
 #include <utility>
 

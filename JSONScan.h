@@ -8,66 +8,59 @@
  *
  ******************************************************************************/
 
-#ifndef _json_Scan_h_
-#define _json_Scan_h_
+#pragma once
 
-#include <cstdlib>
-#include <iostream>
-#include <utils/String.h>
 #include "JSON.h"
 
-namespace masuma
+namespace masuma::json
 {
-  namespace json
+  struct State
   {
-    struct State
-    {
-      virtual Value scan( std::istream& ) = 0;
+    virtual ~State() = default;
 
-      static bool isStructural( char );
-      bool isSpecial( char c );
+    virtual Value scan( std::istream& ) = 0;
 
-      static Value processSpecial( char, std::istream& );
-    };
+    static bool isStructural( char );
+    bool isSpecial( char c );
 
-    struct InObject : State
-    {
-      Value scan( std::istream& in );
-    };
+    static Value processSpecial( char, std::istream& );
+  };
 
-    struct Nowhere : State
-    {
-      Value scan( std::istream& in );
-    };
+  struct InObject : State
+  {
+    Value scan( std::istream& in ) override;
+  };
 
-    struct InString : State
-    {
-      Value scan( std::istream& );
-    };
+  struct Nowhere : State
+  {
+    Value scan( std::istream& in );
+  };
 
-    struct InName : State
-    {
-      Value scan( std::istream& );
-    };
+  struct InString : State
+  {
+    Value scan( std::istream& ) override;
+  };
 
-    struct InValue : State
-    {
-      const char end;
+  struct InName : State
+  {
+    Value scan( std::istream& ) override;
+  };
 
-      char c;
+  struct InValue : State
+  {
+    const char end;
 
-      InValue( char end ) : end(end) {}
+    char c {};
 
-      Value scan( std::istream& );
+    InValue( char end ) : end(end) {}
 
-      bool atEnd() const { return c == end; }
-    };
+    Value scan( std::istream& ) override;
 
-    struct InArray : State
-    {
-      Value scan( std::istream& );
-    };
-  }
+    bool atEnd() const { return c == end; }
+  };
+
+  struct InArray : State
+  {
+    Value scan( std::istream& ) override;
+  };
 }
-
-#endif
