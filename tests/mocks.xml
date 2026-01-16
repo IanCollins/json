@@ -1,0 +1,11 @@
+<!-- ZFS test mocks -->
+
+<!DOCTYPE MockedFunctions [
+  <!ENTITY unistd  SYSTEM "../../../test/unistd.xml" >
+]>
+
+<MockedFunctions>
+
+  &unistd;
+
+</MockedFunctions>
