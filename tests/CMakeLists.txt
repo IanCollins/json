@@ -18,11 +18,14 @@ add_executable(testJSON TestJSON.cc TestAlgorithm.cc ${json_sources})
 
 set(CMAKE_LIBRARY_PATH /opt/build/lib)
 
-add_library(utils STATIC IMPORTED)
-set_target_properties(utils PROPERTIES IMPORTED_LOCATION ${CMAKE_LIBRARY_PATH}/libsystem.a )
+#add_library(utils STATIC IMPORTED)
+#set_target_properties(utils PROPERTIES IMPORTED_LOCATION ${CMAKE_LIBRARY_PATH}/libsystem.a )
 
-target_link_libraries(testJSON PRIVATE GTest::GTest utils
-                        $<$<PLATFORM_ID:SunOS>:socket>
-                        $<$<PLATFORM_ID:SunOS>:nsl>)
+target_link_libraries(testJSON PRIVATE
+        GTest::GTest
+        System::System
+        json
+        $<$<PLATFORM_ID:SunOS>:socket>
+        $<$<PLATFORM_ID:SunOS>:nsl>)
 
 add_test(gtestJSON, testJSON)

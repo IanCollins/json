@@ -2,16 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug-illumos/_deps/googletest-src" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-debug-illumos/_deps/influxdb-cxx-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/googletest-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/influxdb-cxx-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/json-builder-prefix/src/json-builder-build/_deps/googletest-src" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-focal/_deps/googletest-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release-illumos/_deps/googletest-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release-illumos/_deps/influxdb-cxx-src" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-release-illumos/json-builder-prefix/src/json-builder-build/_deps/googletest-src" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/cmake-build-release-illumos/json_d-builder-prefix/src/json_d-builder-build/_deps/googletest-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/googletest-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-release/_deps/influxdb-cxx-src" vcs="Git" />
   </component>
