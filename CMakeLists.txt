@@ -15,7 +15,7 @@ Include(FetchContent)
 FetchContent_Declare(
         system
         GIT_REPOSITORY https://github.com/IanCollins/system.git
-        GIT_TAG        v0.4.0
+        GIT_TAG        v0.5.0
 )
 
 # We want to statically link system.
