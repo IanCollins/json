@@ -28,16 +28,18 @@ add_library(System::System INTERFACE IMPORTED)
 target_link_libraries(System::System INTERFACE System)
 
 include_directories(
+        include/json
         ${system_SOURCE_DIR}/include
 )
 
 file(GLOB json_sources CONFIGURE_DEPENDS *.cc)
-file(GLOB json_headers CONFIGURE_DEPENDS *.h)
+file(GLOB json_headers CONFIGURE_DEPENDS include/json/*.h)
+
+add_library(Json STATIC ${json_sources})
+add_library(masuma::Json ALIAS Json)
+
+install(TARGETS Json DESTINATION lib)
+install(FILES ${json_headers} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")
 
 enable_testing()
 add_subdirectory(tests)
-
-add_library(json STATIC ${json_sources} ${json_headers})
-
-install(TARGETS json DESTINATION lib)
-install(FILES ${json_headers} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")

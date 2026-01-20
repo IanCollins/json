@@ -24,7 +24,7 @@ set(CMAKE_LIBRARY_PATH /opt/build/lib)
 target_link_libraries(testJSON PRIVATE
         GTest::GTest
         System::System
-        json
+        Json
         $<$<PLATFORM_ID:SunOS>:socket>
         $<$<PLATFORM_ID:SunOS>:nsl>)
 
